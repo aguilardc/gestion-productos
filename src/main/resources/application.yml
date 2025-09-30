@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: gestion-productos
+
+  r2dbc:
+    url: r2dbc:h2:mem:///productdb?options=DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true
+
+server:
+  port: 8080
+
+external:
+  api:
+    exchange-rate:
+      base-url: https://api.exchangerate-api.com/v4/latest
+      default-currency: USD
+      timeout: 5000
+logging:
+  level:
+    com.product: DEBUG
+    org.springframework.r2dbc: DEBUG
